@@ -38,8 +38,8 @@
    }
    
    .box {
-        position: absolute;
         display: inline-block;
+        vertical-align: middle;/* свойство для вертикального выравнивания - работает ТОЛЬКО для СТРОЧНО-БЛОЧНЫХ ЭЛЕМЕНТОВ */
         width: 300px;
         height: 300px;
         background-color: green;
@@ -51,8 +51,7 @@
         border-color: black; */
         border: 3px solid black;
         margin: 20px;
-        z-index: 3;
-   }
+     }
 
    /* Блочные элементы */
    /* Строчный  напр ссылка  катринка*/
@@ -66,6 +65,7 @@
     display: block;
     width: 500px;
     margin: 0 auto;
+    /* float: left; зададим обтекание картинки текстом по правой стороне */
    }
 /* положене какого-либо блока относительбно другихможно поменять при помощи ПОЗИЦИОНИРОВАНИЯ:*/
 nav {
@@ -85,11 +85,9 @@ nav {
     /* ВЫВОД position: absolute РАБОТАЕТ, ТОЛЬКО ЕСЛИ У РОДИТЕЛЬСКОГО ЭЛЕМЕНТА СТОИТ position: relative (У BODY ПО УМОЛЧАНИЮ СТОИТ position: relative)*/
 }
 .red {
-    position: absolute;
-    left: 80px;
-    background-color: red;
-    z-index: 4; /* при значении 4<5 red все равно будет ыпереди, т.к позиционирование  абсолют главнее статик, чтобы убрать рэд назад, нужно поставить отрицатеное значение, напр. -1 */
-}
+      background-color: red;
+      height: 100px;
+  }
 .example2 {
     position: relative;
 }
