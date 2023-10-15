@@ -86,7 +86,12 @@ nav {
 }
 .red {
       background-color: red;
-      height: 100px;
+      /* width: 50%; ширина блока 50% от родителяw */
+      /* font-size: 30px;
+      width: 50em;em -величина относительно шрифта текущего элемента: 30px font-size * 50em (width) => width 1500px */
+      /* width: 50rem;  rem -величина относительно шрифта корневого элемента  */
+      width: 50vw; /* vw - 1/100 ширины нашего экрана */
+      height: 30vh;
   }
 .example2 {
     position: relative;
