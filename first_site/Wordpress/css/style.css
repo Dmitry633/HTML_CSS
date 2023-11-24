@@ -4,13 +4,30 @@
     padding: 0;
 }
 
+/* @font-face {   - не очень удобно, т.к вкждом заголовке надо прописывать семейство шрифтов
+    font-family: 'Roboto Black';
+    src: url('../fonts/Roboto-Black.eot');
+    src: url('../fonts/Roboto-Black.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Roboto-Black.woff') format('woff'),
+    url('../fonts/Roboto-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    } */
+
+  
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+
 .container {
+    position: relative;/* устанавливаем для корректного расположения  картинки с сотрудницей */
     width: 1140px;
     margin: 0 auto;
 }
 
 .promo {
-    height: 800px;
+    min-height: 800px;
     background: url(../img/bg/mainscreen_bg.jpg) center center/cover no-repeat;
     /* не нужно верхний отступ лого делать марджином самого лого, гораздо правильнее сделать паддингом промо */
     padding: 39px 0 62px 0;
@@ -45,12 +62,11 @@ h2.title {
 }
 
 .title {
-    font-family: Roboto;
+    /* font-family: 'Roboto Black', sans-serif;  - убираем строку, т.юк такого шрифта уже нету*/ 
     font-size: 41px;
     font-weight: 900;
     font-stretch: normal;
     font-style: normal;
-    line-height: 0.59;
     letter-spacing: normal;
     text-align: center;
     color: #f9bf3b;
@@ -58,7 +74,6 @@ h2.title {
 }
 
 .simple .title_big {
-    font-family: Roboto;
     font-size: 80px;
     font-weight: 900;
     font-stretch: normal;
@@ -74,10 +89,8 @@ h2.title {
 .promo .promo_text {
     padding: 0 13px;
     margin-top: 23px;
-    font-family: Roboto;
     font-size: 21px;
     font-weight: 300;
-    line-height: 1.33;
     text-align: center;
     color: #fff;
 }
@@ -113,7 +126,6 @@ h2.title {
 }
 
 .more .more_text {
-    font-family: Roboto;
     font-size: 15px;
     font-weight: 100;
     font-stretch: normal;
@@ -131,12 +143,12 @@ h2.title {
 }
 
 .waiting {
-    height: 604px;
+    min-height: 604px;
     background-color: #efefef;
     padding: 85px 0 75px 0;
 }
 
-.waiting .waiting_header {
+.waiting .waiting_header, .finish .finish_header {
     font-family: Roboto;
     font-size: 30px;
     font-weight: normal;
@@ -148,7 +160,11 @@ h2.title {
     text-transform: uppercase;
 }
 
-.waiting .waiting_divider {
+.finish .finish_header {
+    color: #fff;
+}
+
+.waiting .waiting_divider, .finish .finish_divider {
     width: 217px;
     height: 4px;
     background-color: #f9bf3b;
@@ -169,12 +185,14 @@ h2.title {
 }
 
 .waiting .waiting_wrapper {
+    display: flex;
+    justify-content: space-between;
     margin-top: 45px;
 }
 .waiting .waiting_wrapper .waiting_item {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0 15px;
+    /* display: inline-block; */
+    /* vertical-align: top; */
+    /* margin: 0 15px; */
     width: 339px;
     text-align: center;
 }
@@ -195,20 +213,212 @@ h2.title {
     color: #4a4a4a;
 }
 
-.my-flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    /* flex-direction: column;задание главной оси вертикальной */
-    justify-content: space-around;/* отвечает за выравниваие элментов по главной оси  флекс бокс */
-    align-items:center ;/* отвечает за выравниваие элментов по поперечной оси  флекс бокс */
-    height: 450px;
+.optimization {
+    min-height: 550px;
+    padding: 102px 0 107px 0;
 }
 
-.my-flex-block {
-    width: 150px;
-    height: 150px;
-    margin: 0 50px;
-    background-color: red;
+.optimization .optimization_header {
+    margin-left: 391px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #299cbd;
+}
+
+.optimization .optimization_text {
+    margin-left: 391px;
+    margin-top: 25px;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.59;
+    letter-spacing: normal;
+    text-align: justify;
+    color: #4a4a4a;
+
+}
+
+.optimization .optimization_text span {
+    font-weight: bold;
+}
+
+.optimization .optimization_img {
+    position: absolute;
+    top: 48px;
+    left: -240px;
+    z-index: -1;
+}
+
+.finish {
+    min-height: 447px;
+    padding: 86px 0 79px 0;
+    background: url('../img/bg/mainscreen_bg_lower.jpg') center center/cover no-repeat;
+}
+
+.finish .finish_wrapper {
+    margin-top: 41px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.finish .finish_wrapper .finish_item {
+    width: 204px;
+}
+
+.finish .finish_wrapper .finish_item .finish_round {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 115px;
+    height: 115px;
+    background-color: #b4e2ff;
+    border-radius: 100%;
+}
+
+.finish .finish_wrapper .finish_item .finish_descr {
+    margin-top: 25px;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.18;
+    letter-spacing: normal;
+    text-align: center;
+    color: #efefef;
+}
+
+.prize {
+    min-height: 628px;
+    background-color: #efefef;
+    padding: 86px 0 87px 0;
+}
+
+.prize .prize_pict {
+    display: block;
+    margin: 0 auto;
+}
+
+.prize .prize_descr {
+    margin-top: 42px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #252525;
+}
+
+.prize .prize_btn {
+    display: block;
+    margin: 52px auto;
+    width: 313px;
+    height: 72px;
+    box-shadow: inset 0px 0 0 0 rgba(0, 0, 0, 0.18);
+    border: solid 4px rgba(0, 0, 0, 0.23);
+    background-image: linear-gradient(to top, #2798b9, #3ab6da);
+    text-shadow: -0.7px -0.7px 0 rgba(0, 0, 0, 0.22);
+    font-family: Roboto;
+    font-size: 21px;
+    font-weight: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
     text-align: center;
     color: #fff;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+}
+
+.webinar {
+    min-height: 515px;
+    padding: 89px 0 64px 0;
+
+}
+
+.webinar .webinar_pict {
+    display: block;
+    margin: 0 auto;
+    /* margin-top: 89px; */
+}
+
+.webinar .header {
+    margin-top: 37px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #252525;
+    text-transform: uppercase;
+}
+
+.webinar .time {
+    margin-top: 30px;
+    font-family: Roboto;
+    font-size: 36px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #299cbd;
+    text-transform: uppercase;
+}
+.webinar h3.subheader {
+    margin-top: 25px;
+    font-family: Roboto;
+    font-size: 23px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #4a4a4a;
+}
+
+.footer {
+    padding: 61px 0 69px 0;
+    min-height: 166px;
+    background-color: #1a1a1a;
+}
+
+.footer a, .footer_divider, .footer_number {
+    /* display: flex;
+    justify-content: space-between; */
+
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: center;
+    color: #888;
+}
+
+.footer_container {
+    position: relative;
+    width: 377px;
+    margin: 0 auto;
+    
+}
+
+.footer .links {
+    display: flex;
+    justify-content: space-around;
+    /* width: 377px; */
+    /* margin: 0 auto; */
 }
