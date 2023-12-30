@@ -1,0 +1,212 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    position: relative; /* прописываем для прозишн абсолют subheader */
+}
+
+nav {
+    height: 50px;
+    background-color: #212121;
+    /* position: fixed; */
+}
+/* для header и для контейнера не можем падинги поставить но мы можем это сделать для nav:(header был на месте nav(стр4) */
+.menu { /* header nav */
+    display: flex;
+    justify-content: space-between;
+    padding: 13px 70px; 
+    margin: 0;
+    list-style-type: none;
+    position: fixed;
+}
+
+.menu .menu_link {
+    margin: 9px 0 8px;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+}
+
+.menu .menu_item {
+    border-right: 2px dotted black;
+    padding-right: 28px;
+}
+
+.subheader {
+    position: absolute;  /* для первого спосба задвигания под прозрачный subheader */
+    width: 100%; 
+    /* position: relative; для второго спосба задвигания под прозрачный subheader */
+    height: 84px;
+    /* opacity: 0.6; - прозрачноть будет распространяться не только на фон, но и на элементы блока, а это нам не нужно -> используем bg-color альфа канал */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* z-index: 2;для второго спосба задвигания под прозрачный subheader */
+
+
+
+}
+
+.subheader .subheader_logo {
+    display: block;
+    max-width: 100%; /* обозначили для возможной замены логотипа с бОльшим размером, именно в ссылке, которая зависит размера картинки внутри нее */
+    margin-top: 16px;/* изначально не сработало, т.к. ссылка изначально - это строчный элемент и марджины на ней не работают, чтобы работало задаем display:block */
+}
+
+.subheader .subheader_official {
+    margin-top: 6px;
+    opacity: 0.5;
+    font-size: 13px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.subheader .subheader_call {
+    margin-top: 19px;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: right;
+    color: #fff;
+}
+
+.subheader .subheader_phone {
+    display: block;
+    margin-top: 8px;
+    font-size: 22px;
+    letter-spacing: normal;
+    text-align: right;
+    color: #fff;
+    line-height: 12px;/* добавили тк элемент занимал места больше, чем кентент в нем */
+}
+
+.subheader .subheader_btn {
+    margin-top: 19px;
+    width: 172px;
+    height: 46px;
+    box-shadow: inset 0px -3px 0 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 4px; /* закругление кнопки */
+    background-image: linear-gradient(to top, #1eacc7, #4ce2ff);
+    text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.21);
+    font-size: 14px;
+    font-weight: 400;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.promo {
+    min-height: 800px;
+    background: url('../img/bg/bg_up.jpg') center center/cover no-repeat;
+    padding: 150px 0 135px 0;
+    /* transform:translateY(-84px) ;/* для второго спосба задвигания под прозрачный subheader 
+    z-index: 1;для второго спосба задвигания под прозрачный subheader */
+}
+
+.promo .promo_header {
+    font-weight: 700;
+    color: #fff;
+    font-size: 60px;
+    text-transform: uppercase;
+    line-height: 60px;  /* т.к. контента меньше, чем сам заголовок, то скорректируем line-height */
+    margin: 0;
+    text-align: center;
+}
+
+.promo .promo_subheader {
+    font-weight: 700;
+    color: #fff;
+    font-size: 36px;
+    text-transform: uppercase;
+    line-height: 36px;
+    margin: 0;
+    margin-top: 22px;
+    text-align: center;
+}
+
+.promo .promo_descr {
+    margin-top: 23px;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.33;
+    letter-spacing: normal;
+    text-align: center;
+    color: #fff;
+}
+
+.promo .promo_btn {
+    display: block;
+    margin: 118px auto 0;
+    width: 259px;
+    height: 63px;
+    /* padding: 25px 39px; */
+    box-shadow: inset 0px -4px 0 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    border-radius: 4px;
+    background-image: linear-gradient(to top, #1eacc7, #4ce2ff);
+    text-shadow: 0.7px 0.7px 0 rgba(0, 0, 0, 0.21);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+
+}
+
+.advantages {
+    display: block;
+    width: 112px;
+    min-height: 24px;
+    margin: 71px auto 38px;
+    background-color: #000;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    font-size: 11px;
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.reasons .reasons_header {
+    margin-top: 38px;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    color: #222;
+    text-transform: uppercase;
+
+}
+
+.reasons .reasons_subtitle {
+    font-size: 17px;
+    font-weight: 300;
+    color: #1eacc7;
+}
+
+.reasons .reasons_text {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.4;
+    text-align: justify;
+    color: #202020;
+}
+
+.reasons_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+}
+
+.reasons .reasons_block .reasons_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 26px;
+    width: 113px;
+    height: 113px;
+    background-color: #1eacc7;
+    border-radius: 100%;
+}
+.reasons .reasons_block .reasons_descr {
+    width: 341px;
+}
